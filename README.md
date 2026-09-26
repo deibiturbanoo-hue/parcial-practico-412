@@ -3,7 +3,7 @@
 **Tema:** POO - Abstracción, Encapsulamiento y Herencia con Maven + Git
 
 ## Integrantes del grupo
-- Nombre completo 1 (REEMPLAZAR)
+- Nombre completo 1 Deibit Urbano
 - Nombre completo 2 (REEMPLAZAR)
 - Nombre completo 3 (REEMPLAZAR)
 
