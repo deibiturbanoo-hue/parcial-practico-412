@@ -1,9 +1,13 @@
 package com.biblioteca;
 
 /**
- * LibroTexto hereda de Libro.
+ * LibroTexto hereda de Libro (primer nivel de herencia).
  * Además de los datos normales de un libro, un libro de texto
  * está asociado a un curso específico (ej: "Cálculo I").
+ *
+ * Esta clase es la base para LibroTextoUNIAC, que la extiende
+ * a su vez -> por eso decimos que hay herencia de dos niveles:
+ * Libro -> LibroTexto -> LibroTextoUNIAC.
  */
 public class LibroTexto extends Libro {
 
@@ -17,15 +21,23 @@ public class LibroTexto extends Libro {
     public LibroTexto(String titulo, String autor, int numeroEjemplares,
                        int numeroEjemplaresPrestados, String curso) {
         super(titulo, autor, numeroEjemplares, numeroEjemplaresPrestados);
-        this.curso = curso;
+        setCurso(curso); // usamos el setter para aplicar la validación
     }
 
     public String getCurso() {
         return curso;
     }
 
+    /**
+     * Validación simple: si el curso viene vacío o nulo,
+     * no lo dejamos así, sino que lo marcamos como "Sin curso asignado".
+     */
     public void setCurso(String curso) {
-        this.curso = curso;
+        if (curso == null || curso.trim().isEmpty()) {
+            this.curso = "Sin curso asignado";
+        } else {
+            this.curso = curso;
+        }
     }
 
     @Override
