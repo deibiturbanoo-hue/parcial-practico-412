@@ -81,3 +81,22 @@ parcial-practico-412/
     └── Main.java
 ```
 
+
+
+## Respuestas teóricas heidy
+
+### 2 situaciones donde no se podría aplicar herencia
+
+1. **Atributos privados**: si en la clase `Libro` los atributos (`titulo`, `autor`, etc.) estuvieran declarados como `private` en vez de `protected`, la clase `Novela` no podría acceder a ellos directamente — solo a través de los métodos `get`/`set` heredados. Por ejemplo, un fragmento como este daría error de compilación:
+```java
+   // Dentro de Novela, si titulo fuera private en Libro:
+   this.titulo = titulo; // ERROR: titulo no es visible desde la subclase
+```
+
+2. **Clase final**: si `Libro` se hubiera declarado como `public final class Libro`, Java no permitiría crear ninguna subclase (`LibroTexto`, `LibroTextoUNIAC`, `Novela`), ya que el modificador `final` en una clase impide que sea heredada.
+
+### 2 atributos nuevos y un método adicional
+
+- **isbn** (String): identificador único internacional del libro.
+- **anioPublicacion** (int): año en que se publicó el libro.
+- **Método nuevo: `estaDisponible()`**: retorna `boolean`, verdadero si `(numeroEjemplares - numeroEjemplaresPrestados) > 0`. Tiene sentido porque actualmente solo se sabe si hay ejemplares disponibles al intentar prestar uno; este método permite consultar la disponibilidad sin alterar el estado del objeto.

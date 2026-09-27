@@ -1,9 +1,20 @@
 package com.biblioteca;
 
-// Esta clase es para los libros de texto (los que se usan en una materia).
-// La idea es que no tenga que repetir todo lo que ya tiene un libro normal
-// (título, autor, ejemplares, etc.), sino que herede eso de la clase Libro
-// y solo le agregue lo nuevo, que en este caso es el curso al que pertenece.
+/**
+ * LibroTexto hereda de Libro (primer nivel de herencia).
+ * Además de los datos normales de un libro, un libro de texto
+ * está asociado a un curso específico (ej: "Cálculo I").
+ *
+ * Esta clase es la base para LibroTextoUNIAC, que la extiende
+ * a su vez -> por eso decimos que hay herencia de dos niveles:
+ * Libro -> LibroTexto -> LibroTextoUNIAC.
+ *
+ * La idea es que no tenga que repetir todo lo que ya tiene un libro
+ * normal (título, autor, ejemplares, etc.), sino que herede eso de
+ * la clase Libro y solo le agregue lo nuevo, que en este caso es
+ * el curso al que pertenece.
+ */
+
 public class LibroTexto extends Libro {
 
     // Este es el único dato nuevo que necesita un libro de texto: el curso.
@@ -23,7 +34,7 @@ public class LibroTexto extends Libro {
     public LibroTexto(String titulo, String autor, int numeroEjemplares,
                        int numeroEjemplaresPrestados, String curso) {
         super(titulo, autor, numeroEjemplares, numeroEjemplaresPrestados);
-        this.curso = curso;
+        setCurso(curso); // usamos el setter para aplicar la validación
     }
 
     // Getter y setter del curso. Los usamos en vez de dejar el atributo
@@ -33,8 +44,16 @@ public class LibroTexto extends Libro {
         return curso;
     }
 
+    /**
+     * Validación simple: si el curso viene vacío o nulo,
+     * no lo dejamos así, sino que lo marcamos como "Sin curso asignado".
+     */
     public void setCurso(String curso) {
-        this.curso = curso;
+        if (curso == null || curso.trim().isEmpty()) {
+            this.curso = "Sin curso asignado";
+        } else {
+            this.curso = curso;
+        }
     }
 
     // Sobreescribimos el toString para que también muestre el curso.
