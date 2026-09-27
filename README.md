@@ -3,9 +3,9 @@
 **Tema:** POO - Abstracción, Encapsulamiento y Herencia con Maven + Git
 
 ## Integrantes del grupo
-- Nombre completo 1 (REEMPLAZAR)
-- Nombre completo 2 (REEMPLAZAR)
-- Nombre completo 3 (REEMPLAZAR)
+- Nombre completo 1 Deibit Arley Urbano
+- Nombre completo 2 Jeferson Paredes
+- Nombre completo 3 heidy Valentina Avendaño
 
 > ⚠️ Reemplacen estos 3 nombres por los nombres completos reales de cada integrante antes de entregar. El profesor lo pide explícitamente.
 
