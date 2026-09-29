@@ -7,8 +7,6 @@
 - Nombre completo 2 Jefferson Paredes E
 - Nombre completo 3 heidy Valentina Avendaño
 
-> ⚠️ Reemplacen estos 3 nombres por los nombres completos reales de cada integrante antes de entregar. El profesor lo pide explícitamente.
-
 ## Descripción del proyecto
 Sistema de gestión de biblioteca que maneja diferentes tipos de libros aplicando los tres pilares de la Programación Orientada a Objetos pedidos en el taller: **abstracción**, **encapsulamiento** y **herencia**.
 
